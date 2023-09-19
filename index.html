@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script src="functions.js"></script>
+</head> 
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+.contenedor {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.contenedor h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}
+
+.conversor-uno,
+.conversor-dos,
+.conversor-tres,
+.conversor-cuatro {
+    margin-bottom: 20px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+input[type="number"],
+input[type="text"] {
+    width: 96%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+</style>
+<body>
+    <div class="contenedor">
+    <h1>Conversor de monedas</h1>
+    <div class="conversor-uno">
+        <select id="diviza">
+            <option value="default">Elija una moneda</option>
+            <option value="dolar">Peso/Dolar</option> 
+            <option value="euro">Peso/Euro</option>
+            <option value="reales">Peso/Reales</option>
+        </select>
+        <input type="number" placeholder="ARS" id="peso">
+        <input id="input-moneda" type="text" placeholder="Elija una moneda" >
+        <input type="submit" value="Convertir" onclick="pesoDiviza()">
+        <input type="submit" value="Borrar" onclick="borrarPeso()">
+        <script>
+            actualizarPlaceholder("diviza", "input-moneda");
+        </script>
+        </div>
+        <div class="conversor-dos" >
+            <select id="diviza-dos">
+                <option value="default">Elija una moneda</option>
+                <option value="peso">Dolar/Peso</option> 
+                <option value="euro">Dolar/Euro</option>
+                <option value="reales">Dolar/Reales</option>
+            </select>
+            <input type="number" placeholder="DOLAR" id="dolar">
+            <input id="input-moneda-dos" type="text" placeholder="Elija una moneda" >
+            <input type="submit" value="Convertir" onclick="dolarDiviza()">
+            <input type="submit" value="Borrar" onclick="borrarDolar()">
+            <script>
+                actualizarPlaceholderDos("diviza-dos", "input-moneda-dos");
+            </script>
+        </div>
+        <div class="conversor-tres">
+            <select id="diviza-tres">
+                <option value="default">Elija una moneda</option>
+                <option value="peso">Euro/Peso</option> 
+                <option value="dolar">Euro/Dolares</option>
+                <option value="reales">Euro/Reales</option>
+            </select>
+            <input type="number" placeholder="EURO" id="euro">
+            <input id="input-moneda-tres" type="text" placeholder="Elija una moneda">
+            <input type="submit" value="Convertir" onclick="euroDiviza()">
+            <input type="submit" value="Borrar" onclick="borrarEuro()">
+            <script>
+                actualizarPlaceholderTres("diviza-tres", "input-moneda-tres");
+            </script>
+        </div>
+        <div class="conversor-cuatro">
+            <select id="diviza-cuatro">
+                <option value="default">Elija una moneda</option>
+                <option value="peso">Reales/Peso</option> 
+                <option value="dolar">Reales/Dolares</option>
+                <option value="euro">Reales/Euro</option>
+            </select>
+            <input type="number" placeholder="REALES" id="real">
+            <input id="input-moneda-cuatro" type="text" placeholder="Elija una moneda">
+            <input type="submit" value="Convertir" onclick="realDiviza()">
+            <input type="submit" value="Borrar" onclick="borrarReal()">
+            <script>
+                actualizarPlaceholderCuatro("diviza-cuatro", "input-moneda-cuatro");
+            </script>
+        </div>
+    </div>
+</body>
+</html>
